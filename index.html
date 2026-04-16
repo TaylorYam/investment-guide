@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F766E">
+<title>投資升級方案｜從 0050 升級到 SPYM／QQQ</title>
+<meta name="description" content="從單純台股大盤 ETF（0050）升級至美股大盤 ETF（SPYM／QQQ）完整說明">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --teal-900:#134E4A;
+    --teal-700:#0F766E;
+    --teal-600:#0D9488;
+    --teal-500:#14B8A6;
+    --teal-50:#F0FDFA;
+    --cyan-600:#0891B2;
+    --cyan-500:#06B6D4;
+    --amber-500:#F59E0B;
+    --amber-50:#FFFBEB;
+    --red-500:#EF4444;
+    --red-50:#FEF2F2;
+    --slate-900:#0F172A;
+    --slate-700:#334155;
+    --slate-600:#475569;
+    --slate-500:#64748B;
+    --slate-400:#94A3B8;
+    --slate-300:#CBD5E1;
+    --slate-200:#E2E8F0;
+    --slate-100:#F1F5F9;
+    --slate-50:#F8FAFC;
+    --white:#FFFFFF;
+    --radius:16px;
+    --radius-sm:10px;
+    --shadow-sm:0 1px 2px rgba(15,23,42,.04), 0 1px 3px rgba(15,23,42,.06);
+    --shadow-md:0 4px 6px -1px rgba(15,23,42,.06), 0 2px 4px -2px rgba(15,23,42,.04);
+    --shadow-lg:0 10px 15px -3px rgba(15,23,42,.08), 0 4px 6px -4px rgba(15,23,42,.05);
+  }
+
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:"Noto Sans TC","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--slate-900);
+    background:var(--slate-50);
+    letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .container{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ------------ HERO ------------ */
+  .hero{
+    background:linear-gradient(135deg,#0F766E 0%,#134E4A 60%,#0C3B37 100%);
+    color:var(--white);
+    padding:72px 20px 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40%;
+    right:-20%;
+    width:380px;
+    height:380px;
+    background:radial-gradient(circle,rgba(20,184,166,.28) 0%,rgba(20,184,166,0) 70%);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-30%;
+    left:-15%;
+    width:320px;
+    height:320px;
+    background:radial-gradient(circle,rgba(6,182,212,.22) 0%,rgba(6,182,212,0) 70%);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    max-width:720px;
+    margin:0 auto;
+    z-index:1;
+  }
+  .hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 14px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:999px;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.08em;
+    color:#CCFBF1;
+    margin-bottom:22px;
+    backdrop-filter:blur(8px);
+  }
+  .hero-tag-dot{
+    width:6px;height:6px;border-radius:50%;background:var(--teal-500);
+    box-shadow:0 0 0 4px rgba(20,184,166,.25);
+  }
+  .hero h1{
+    font-size:34px;
+    font-weight:900;
+    line-height:1.25;
+    margin:0 0 16px;
+    letter-spacing:-.01em;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(90deg,#5EEAD4,#22D3EE);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero-sub{
+    font-size:15px;
+    line-height:1.7;
+    color:rgba(255,255,255,.82);
+    margin:0 0 28px;
+    max-width:560px;
+  }
+  .hero-meta{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    color:rgba(255,255,255,.6);
+  }
+  .hero-meta-divider{
+    width:20px;height:1px;background:rgba(255,255,255,.3);
+  }
+
+  /* ------------ SECTION ------------ */
+  main{padding:36px 0 24px}
+  section{
+    margin-bottom:28px;
+  }
+  .card{
+    background:var(--white);
+    border:1px solid var(--slate-200);
+    border-radius:var(--radius);
+    padding:28px 22px;
+    box-shadow:var(--shadow-sm);
+  }
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .section-num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:36px;
+    height:36px;
+    padding:0 10px;
+    background:var(--teal-50);
+    color:var(--teal-700);
+    border-radius:10px;
+    font-family:"Inter",sans-serif;
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:.02em;
+  }
+  .section-label{
+    font-size:12px;
+    font-weight:600;
+    color:var(--teal-700);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  h2{
+    font-size:24px;
+    font-weight:800;
+    line-height:1.35;
+    margin:0 0 10px;
+    letter-spacing:-.005em;
+    color:var(--slate-900);
+  }
+  .section-lead{
+    font-size:15px;
+    line-height:1.7;
+    color:var(--slate-600);
+    margin:0 0 22px;
+  }
+
+  /* ------------ STAT CARDS (Slide 2) ------------ */
+  .stat-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-bottom:20px;
+  }
+  .stat{
+    background:linear-gradient(135deg,#F0FDFA 0%,#ECFEFF 100%);
+    border:1px solid #CCFBF1;
+    border-radius:14px;
+    padding:18px 18px;
+    position:relative;
+    overflow:hidden;
+  }
+  .stat-label{
+    font-size:13px;
+    color:var(--slate-600);
+    font-weight:500;
+    margin-bottom:6px;
+  }
+  .stat-value{
+    font-family:"Inter",sans-serif;
+    font-size:36px;
+    font-weight:800;
+    color:var(--teal-700);
+    line-height:1;
+    letter-spacing:-.02em;
+    margin-bottom:8px;
+  }
+  .stat-desc{
+    font-size:13px;
+    color:var(--slate-500);
+    line-height:1.55;
+  }
+  .stat.warn{
+    background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%);
+    border-color:#FDE68A;
+  }
+  .stat.warn .stat-value{color:#B45309}
+
+  /* ------------ CALLOUT ------------ */
+  .callout{
+    display:flex;
+    gap:14px;
+    padding:16px 18px;
+    background:#F8FAFC;
+    border-left:3px solid var(--teal-600);
+    border-radius:0 12px 12px 0;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--slate-700);
+  }
+  .callout.danger{
+    background:#FEF2F2;
+    border-left-color:var(--red-500);
+  }
+  .callout.warn{
+    background:#FFFBEB;
+    border-left-color:var(--amber-500);
+  }
+  .callout-icon{
+    flex-shrink:0;
+    width:22px;height:22px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+    margin-top:1px;
+  }
+  .callout b{color:var(--slate-900)}
+
+  /* ------------ DONUT / BAR (Slide 3) ------------ */
+  .donut-wrap{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:24px 18px;
+    background:linear-gradient(135deg,#F1F5F9 0%,#F8FAFC 100%);
+    border-radius:14px;
+    margin-bottom:18px;
+  }
+  .donut{
+    flex-shrink:0;
+    width:130px;height:130px;
+    border-radius:50%;
+    background:conic-gradient(
+      var(--teal-600) 0deg,
+      var(--teal-600) 226.8deg,
+      var(--cyan-500) 226.8deg,
+      var(--cyan-500) 280.8deg,
+      var(--slate-300) 280.8deg,
+      var(--slate-300) 360deg
+    );
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .donut::before{
+    content:"";
+    position:absolute;
+    width:86px;height:86px;
+    background:var(--white);
+    border-radius:50%;
+  }
+  .donut-center{
+    position:relative;
+    text-align:center;
+    z-index:1;
+  }
+  .donut-center-value{
+    font-family:"Inter",sans-serif;
+    font-size:26px;
+    font-weight:800;
+    color:var(--teal-700);
+    line-height:1;
+  }
+  .donut-center-label{
+    font-size:11px;
+    color:var(--slate-500);
+    margin-top:4px;
+  }
+  .donut-legend{
+    flex:1;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .legend-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    color:var(--slate-700);
+  }
+  .legend-dot{
+    width:10px;height:10px;border-radius:3px;flex-shrink:0;
+  }
+  .legend-label{flex:1}
+  .legend-value{
+    font-family:"Inter",sans-serif;
+    font-weight:700;
+    color:var(--slate-900);
+  }
+
+  /* ------------ PERFORMANCE CHART (Slide 4) ------------ */
+  .perf-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:20px;
+  }
+  .perf-card{
+    text-align:center;
+    padding:14px 8px;
+    border-radius:12px;
+    border:1px solid var(--slate-200);
+    background:var(--white);
+  }
+  .perf-card.best{
+    background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%);
+    border-color:#67E8F9;
+    position:relative;
+  }
+  .perf-card.best::before{
+    content:"最佳";
+    position:absolute;
+    top:-8px;left:50%;transform:translateX(-50%);
+    background:var(--cyan-600);
+    color:var(--white);
+    font-size:10px;font-weight:700;
+    padding:2px 8px;border-radius:6px;
+    letter-spacing:.05em;
+  }
+  .perf-ticker{
+    font-family:"Inter",sans-serif;
+    font-size:13px;
+    font-weight:700;
+    color:var(--slate-600);
+    margin-bottom:6px;
+    letter-spacing:.02em;
+  }
+  .perf-return{
+    font-family:"Inter",sans-serif;
+    font-size:22px;
+    font-weight:800;
+    color:var(--teal-700);
+    line-height:1;
+  }
+  .perf-card.best .perf-return{color:var(--cyan-600)}
+  .perf-yoy{
+    font-size:11px;
+    color:var(--slate-500);
+    margin-top:6px;
+  }
+  .chart-box{
+    background:var(--white);
+    border:1px solid var(--slate-200);
+    border-radius:12px;
+    padding:16px 12px 8px;
+    margin-bottom:14px;
+  }
+  .chart-wrap{position:relative;height:260px}
+  .chart-note{
+    font-size:12px;
+    color:var(--slate-500);
+    line-height:1.6;
+    padding:0 4px;
+  }
+
+  /* ------------ COMPARE (Slide 5) ------------ */
+  .compare-tabs{
+    display:flex;
+    background:var(--slate-100);
+    border-radius:12px;
+    padding:4px;
+    margin-bottom:20px;
+    gap:2px;
+  }
+  .compare-tab{
+    flex:1;
+    padding:10px 8px;
+    background:transparent;
+    border:none;
+    border-radius:8px;
+    font-family:"Inter",inherit;
+    font-size:14px;
+    font-weight:700;
+    color:var(--slate-600);
+    cursor:pointer;
+    transition:all .18s;
+    text-align:center;
+  }
+  .compare-tab.active{
+    background:var(--white);
+    color:var(--teal-700);
+    box-shadow:var(--shadow-sm);
+  }
+  .compare-panel{display:none}
+  .compare-panel.active{display:block;animation:fadeIn .28s}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  .compare-card{
+    border:1px solid var(--slate-200);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:4px;
+  }
+  .compare-head{
+    padding:18px 18px 14px;
+    background:linear-gradient(135deg,#F8FAFC 0%,#F1F5F9 100%);
+    border-bottom:1px solid var(--slate-200);
+  }
+  .compare-head.spym{background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%)}
+  .compare-head.qqq{background:linear-gradient(135deg,#EFF6FF 0%,#E0F2FE 100%)}
+  .compare-head.t50{background:linear-gradient(135deg,#FEF3C7 0%,#FEF9C3 100%)}
+  .compare-title{
+    display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    margin-bottom:4px;
+  }
+  .compare-ticker{
+    font-family:"Inter",sans-serif;
+    font-size:22px;font-weight:800;
+    color:var(--slate-900);
+    letter-spacing:-.01em;
+  }
+  .compare-badge{
+    font-size:11px;font-weight:700;
+    padding:3px 10px;border-radius:999px;
+    letter-spacing:.05em;
+  }
+  .badge-stable{background:var(--teal-50);color:var(--teal-700)}
+  .badge-growth{background:#DBEAFE;color:#1D4ED8}
+  .badge-current{background:#FEF3C7;color:#92400E}
+  .compare-name{
+    font-size:13px;color:var(--slate-600);
+  }
+  .compare-body{padding:8px 4px}
+  .compare-row{
+    display:flex;align-items:flex-start;
+    padding:12px 14px;
+    border-bottom:1px solid var(--slate-100);
+    gap:14px;
+  }
+  .compare-row:last-child{border-bottom:none}
+  .compare-key{
+    flex-shrink:0;
+    width:90px;
+    font-size:13px;
+    color:var(--slate-500);
+  }
+  .compare-val{
+    flex:1;
+    font-size:14px;
+    font-weight:600;
+    color:var(--slate-900);
+    line-height:1.55;
+  }
+  .rec{
+    margin-top:22px;
+    padding:16px 18px;
+    background:linear-gradient(135deg,#0F766E 0%,#0D9488 100%);
+    color:var(--white);
+    border-radius:12px;
+    font-size:14px;
+    line-height:1.7;
+  }
+  .rec b{color:#5EEAD4}
+
+  /* ------------ STEPS (Slide 6) ------------ */
+  .steps{display:flex;flex-direction:column;gap:16px}
+  .step{
+    display:flex;gap:16px;
+    padding:18px 18px;
+    background:var(--white);
+    border:1px solid var(--slate-200);
+    border-radius:14px;
+    position:relative;
+  }
+  .step-num{
+    flex-shrink:0;
+    width:40px;height:40px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--teal-600),var(--cyan-600));
+    color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Inter",sans-serif;
+    font-size:18px;font-weight:800;
+    box-shadow:0 4px 10px -2px rgba(13,148,136,.4);
+  }
+  .step-body h3{
+    margin:6px 0 6px;
+    font-size:16px;font-weight:700;
+    color:var(--slate-900);
+  }
+  .step-body p{
+    margin:0;
+    font-size:14px;line-height:1.7;
+    color:var(--slate-600);
+  }
+
+  /* ------------ QA (Slide 7) ------------ */
+  .qa{
+    border:1px solid var(--slate-200);
+    border-radius:12px;
+    margin-bottom:10px;
+    overflow:hidden;
+    background:var(--white);
+    transition:box-shadow .2s;
+  }
+  .qa[open]{box-shadow:var(--shadow-md);border-color:var(--teal-600)}
+  .qa-summary{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:16px 18px;
+    cursor:pointer;
+    list-style:none;
+    font-size:15px;
+    font-weight:600;
+    color:var(--slate-900);
+    line-height:1.55;
+  }
+  .qa-summary::-webkit-details-marker{display:none}
+  .qa-q{
+    flex-shrink:0;
+    font-family:"Inter",sans-serif;
+    font-size:13px;font-weight:800;
+    color:var(--teal-700);
+    background:var(--teal-50);
+    padding:3px 9px;border-radius:6px;
+    margin-top:1px;
+  }
+  .qa-text{flex:1}
+  .qa-arrow{
+    flex-shrink:0;
+    width:20px;height:20px;
+    color:var(--slate-400);
+    transition:transform .2s;
+    margin-top:2px;
+  }
+  .qa[open] .qa-arrow{transform:rotate(180deg);color:var(--teal-600)}
+  .qa-body{
+    padding:2px 18px 18px 56px;
+    font-size:14px;line-height:1.75;color:var(--slate-600);
+  }
+
+  /* ------------ FEE TABLE (Slide 8) ------------ */
+  .fee-section{margin-bottom:22px}
+  .fee-label{
+    display:inline-block;
+    font-size:12px;font-weight:700;
+    color:var(--teal-700);
+    background:var(--teal-50);
+    padding:5px 12px;
+    border-radius:8px;
+    margin-bottom:14px;
+    letter-spacing:.04em;
+  }
+  .fee-label.sell{color:#0369A1;background:#E0F2FE}
+  .fee-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid var(--slate-200);
+    border-radius:12px;
+    overflow:hidden;
+    font-size:13px;
+  }
+  .fee-table th,.fee-table td{
+    padding:12px 12px;
+    text-align:left;
+    border-bottom:1px solid var(--slate-100);
+  }
+  .fee-table th{
+    background:var(--slate-50);
+    font-weight:700;
+    color:var(--slate-700);
+    font-size:12px;
+  }
+  .fee-table tr:last-child td{border-bottom:none}
+  .fee-table td.num{
+    font-family:"Inter",sans-serif;
+    font-weight:700;
+    color:var(--teal-700);
+  }
+  .fee-example{
+    display:flex;flex-direction:column;gap:8px;
+    padding:14px 16px;
+    background:var(--slate-50);
+    border-radius:10px;
+    margin-top:12px;
+  }
+  .fee-example-row{
+    display:flex;justify-content:space-between;
+    font-size:13px;
+    color:var(--slate-700);
+  }
+  .fee-example-row b{
+    font-family:"Inter",sans-serif;
+    color:var(--teal-700);
+  }
+  .fee-promo{
+    display:flex;gap:10px;align-items:flex-start;
+    padding:12px 14px;
+    background:#FFFBEB;
+    border:1px solid #FDE68A;
+    border-radius:10px;
+    font-size:13px;line-height:1.6;
+    color:#78350F;
+    margin-bottom:16px;
+  }
+
+  /* ------------ FOOTER ------------ */
+  footer{
+    padding:32px 20px 48px;
+    background:var(--slate-900);
+    color:var(--slate-400);
+    font-size:12px;line-height:1.7;
+    text-align:center;
+  }
+  footer b{color:var(--slate-200)}
+  .footer-divider{
+    width:40px;height:2px;
+    background:var(--teal-600);
+    margin:0 auto 18px;
+    border-radius:2px;
+  }
+
+  /* ------------ BACK TO TOP ------------ */
+  .to-top{
+    position:fixed;
+    right:16px;bottom:20px;
+    width:44px;height:44px;
+    border-radius:50%;
+    background:var(--teal-700);
+    color:var(--white);
+    border:none;
+    box-shadow:var(--shadow-lg);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(8px);
+    transition:all .25s;
+    z-index:50;
+  }
+  .to-top.show{opacity:1;transform:none}
+  .to-top:active{transform:scale(.94)}
+
+  /* ------------ TABLET/DESKTOP ------------ */
+  @media (min-width:560px){
+    .hero{padding:84px 24px 72px}
+    .hero h1{font-size:42px}
+    .stat-grid{grid-template-columns:repeat(3,1fr)}
+    h2{font-size:27px}
+    .card{padding:32px 28px}
+  }
+  @media (min-width:720px){
+    .perf-stats{gap:14px}
+    .perf-return{font-size:26px}
+    .chart-wrap{height:320px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============= HERO ============= -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      <span>投資升級方案 · 2026 年 4 月</span>
+    </div>
+    <h1>你的定期定額<br><span class="accent">值得更穩健的舞台</span></h1>
+    <p class="hero-sub">
+      從單純台股大盤 ETF（0050）升級至美股大盤 ETF<br>
+      （SPYM / QQQ）的完整說明。
+    </p>
+    <div class="hero-meta">
+      <span>資料更新至 2026 年 4 月</span>
+      <span class="hero-meta-divider"></span>
+      <span>共 7 章節 · 約 8 分鐘閱讀</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- ============= SECTION 1: 0050 樣貌 ============= -->
+<section>
+  <div class="card">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <span class="section-label">持有現況</span>
+    </div>
+    <h2>你現在持有的 0050，<br>長什麼樣子？</h2>
+    <p class="section-lead">元大台灣50（0050）追蹤台股市值前 50 大企業，<b>但實際成分結構，遠比「大盤」兩字更集中。</b></p>
+
+    <div class="stat-grid">
+      <div class="stat warn">
+        <div class="stat-label">台積電佔 0050 比重</div>
+        <div class="stat-value">~63%</div>
+        <div class="stat-desc">近半個部位押一家公司</div>
+      </div>
+      <div class="stat warn">
+        <div class="stat-label">半導體類佔比</div>
+        <div class="stat-value">~72%</div>
+        <div class="stat-desc">產業高度集中</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">成分股數量</div>
+        <div class="stat-value">50<span style="font-size:22px;color:var(--slate-500);margin-left:4px">支</span></div>
+        <div class="stat-desc">僅台灣市值前 50 大</div>
+      </div>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-icon">⚠️</div>
+      <div>你以為買了<b>「台股大盤」</b>，但其實你買的是超過一半的<b>台積電</b>＋四分之三<b>半導體股</b>。這不是真正的分散。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= SECTION 2: TSMC 63% ============= -->
+<section>
+  <div class="card">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <span class="section-label">集中風險</span>
+    </div>
+    <h2>台積電佔台股加權指數<br>高達 63%</h2>
+    <p class="section-lead">2026 年 4 月最新數據 — <b>一家公司主宰整個大盤走勢。</b></p>
+
+    <div class="donut-wrap">
+      <div class="donut">
+        <div class="donut-center">
+          <div class="donut-center-value">63%</div>
+          <div class="donut-center-label">台積電</div>
+        </div>
+      </div>
+      <div class="donut-legend">
+        <div class="legend-item">
+          <span class="legend-dot" style="background:var(--teal-600)"></span>
+          <span class="legend-label">台積電</span>
+          <span class="legend-value">63.0%</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:var(--cyan-500)"></span>
+          <span class="legend-label">金融 / 地產等</span>
+          <span class="legend-value">15.0%</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:var(--slate-300)"></span>
+          <span class="legend-label">其他</span>
+          <span class="legend-value">22.0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-icon">🚨</div>
+      <div><b>過度集中風險：</b>台積電受川普關稅、中美緊張等局勢直接影響，一旦下跌，「大盤 ETF」會同步重傷；也更容易受到半導體產業景氣循環的影響。</div>
+    </div>
+
+    <div class="callout warn" style="margin-top:12px">
+      <div class="callout-icon">📉</div>
+      <div><b>實際案例：</b>2025 年初 DeepSeek 事件 + 川普政策衝擊，<b>台積電跌 10.8%</b>，帶動<b>台股電子類跌 7.7%</b>。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= SECTION 3: 11 年績效比較 ============= -->
+<section>
+  <div class="card">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <span class="section-label">績效比較</span>
+    </div>
+    <h2>11 年績效比較<br>2015 → 2025</h2>
+    <p class="section-lead">各投入 100 元，含息再投入至 2025 年底（Yahoo Finance 數據）</p>
+
+    <div class="perf-stats">
+      <div class="perf-card">
+        <div class="perf-ticker">0050</div>
+        <div class="perf-return">+220%</div>
+        <div class="perf-yoy">年化 ~11.3%</div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-ticker">SPYM</div>
+        <div class="perf-return">+283%</div>
+        <div class="perf-yoy">年化 ~13.8%</div>
+      </div>
+      <div class="perf-card best">
+        <div class="perf-ticker">QQQ</div>
+        <div class="perf-return">+610%</div>
+        <div class="perf-yoy">年化 ~20.2%</div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <div class="chart-wrap">
+        <canvas id="perfChart"></canvas>
+      </div>
+    </div>
+    <p class="chart-note">數據來源：Yahoo Finance（SPY / QQQ 含息總報酬）；0050 以台股加權報酬指數近似推算。<b>過去績效不代表未來表現。</b></p>
+  </div>
+</section>
+
+<!-- ============= SECTION 4: SPYM vs QQQ ============= -->
+<section>
+  <div class="card">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <span class="section-label">標的比較</span>
+    </div>
+    <h2>SPYM vs QQQ<br>哪個適合你？</h2>
+    <p class="section-lead">同樣是美股，兩檔定位截然不同。點選下方分頁切換比較。</p>
+
+    <div class="compare-tabs" role="tablist">
+      <button class="compare-tab active" data-target="panel-t50" role="tab">0050<br><span style="font-size:11px;font-weight:500;color:var(--slate-500)">現況</span></button>
+      <button class="compare-tab" data-target="panel-spym" role="tab">SPYM<br><span style="font-size:11px;font-weight:500;color:var(--slate-500)">穩健</span></button>
+      <button class="compare-tab" data-target="panel-qqq" role="tab">QQQ<br><span style="font-size:11px;font-weight:500;color:var(--slate-500)">積極</span></button>
+    </div>
+
+    <!-- 0050 -->
+    <div class="compare-panel active" id="panel-t50">
+      <div class="compare-card">
+        <div class="compare-head t50">
+          <div class="compare-title">
+            <span class="compare-ticker">0050</span>
+            <span class="compare-badge badge-current">現況</span>
+          </div>
+          <div class="compare-name">元大台灣50</div>
+        </div>
+        <div class="compare-body">
+          <div class="compare-row"><div class="compare-key">追蹤指數</div><div class="compare-val">台股前 50 大</div></div>
+          <div class="compare-row"><div class="compare-key">成分股數</div><div class="compare-val">50 支</div></div>
+          <div class="compare-row"><div class="compare-key">最大持股</div><div class="compare-val">台積電 ~63%</div></div>
+          <div class="compare-row"><div class="compare-key">產業分佈</div><div class="compare-val">半導體為主（~75%）</div></div>
+          <div class="compare-row"><div class="compare-key">市場</div><div class="compare-val">台灣單一市場</div></div>
+          <div class="compare-row"><div class="compare-key">波動程度</div><div class="compare-val">中高</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPYM -->
+    <div class="compare-panel" id="panel-spym">
+      <div class="compare-card">
+        <div class="compare-head spym">
+          <div class="compare-title">
+            <span class="compare-ticker">SPYM</span>
+            <span class="compare-badge badge-stable">穩健首選</span>
+          </div>
+          <div class="compare-name">追蹤標普 500，目前費用最低的 ETF</div>
+        </div>
+        <div class="compare-body">
+          <div class="compare-row"><div class="compare-key">追蹤指數</div><div class="compare-val">S&amp;P 500</div></div>
+          <div class="compare-row"><div class="compare-key">成分股數</div><div class="compare-val">500+ 支</div></div>
+          <div class="compare-row"><div class="compare-key">最大持股</div><div class="compare-val">輝達（NVDA）~7.5%</div></div>
+          <div class="compare-row"><div class="compare-key">產業分佈</div><div class="compare-val">科技、金融、醫療多元</div></div>
+          <div class="compare-row"><div class="compare-key">市場</div><div class="compare-val">全球最大資本市場</div></div>
+          <div class="compare-row"><div class="compare-key">波動程度</div><div class="compare-val">中</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QQQ -->
+    <div class="compare-panel" id="panel-qqq">
+      <div class="compare-card">
+        <div class="compare-head qqq">
+          <div class="compare-title">
+            <span class="compare-ticker">QQQ</span>
+            <span class="compare-badge badge-growth">積極成長</span>
+          </div>
+          <div class="compare-name">Invesco · 那斯達克 100</div>
+        </div>
+        <div class="compare-body">
+          <div class="compare-row"><div class="compare-key">追蹤指數</div><div class="compare-val">那斯達克 100</div></div>
+          <div class="compare-row"><div class="compare-key">成分股數</div><div class="compare-val">100 支</div></div>
+          <div class="compare-row"><div class="compare-key">最大持股</div><div class="compare-val">輝達（NVDA）~8.7%</div></div>
+          <div class="compare-row"><div class="compare-key">產業分佈</div><div class="compare-val">科技重押 ~65%</div></div>
+          <div class="compare-row"><div class="compare-key">市場</div><div class="compare-val">美國科技龍頭</div></div>
+          <div class="compare-row"><div class="compare-key">波動程度</div><div class="compare-val">中高</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec">
+      <b>建議搭配方式：</b>想「穩健長期、分散全球」→ <b>SPYM</b>；想「參與 AI 科技成長、接受較高波動」→ <b>QQQ</b>。也可以兩者搭配，依個人比例調整。
+    </div>
+  </div>
+</section>
+
+<!-- ============= SECTION 5: 如何開始 ============= -->
+<section>
+  <div class="card">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <span class="section-label">實作步驟</span>
+    </div>
+    <h2>如何透過複委託<br>開始定期定額？</h2>
+    <p class="section-lead">你已有複委託帳戶，可以立即操作，無需另開海外券商。</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>確認自己的風險偏好</h3>
+          <p>偏穩健 → <b>SPYM</b>；偏積極 → <b>QQQ</b>。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>決定分配的比例</h3>
+          <p>0050 繼續持有，重新分配每月定期定額標的的比例。例如希望台股 50% + 美股 50%，則可將一半額度挪到美股。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>至玉山證券官網設定複委託定期定額</h3>
+          <p>輸入代碼 <b>SPYM</b> 或 <b>QQQ</b>，設定每月固定日扣款金額，選擇扣款日期和金額。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>留意複委託手續費結構</h3>
+          <p>複委託每筆約 0.5–1%，適合長期低頻操作的定期定額策略；頻繁短線交易不划算。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= SECTION 6: Q&A ============= -->
+<section>
+  <div class="card">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <span class="section-label">常見問題</span>
+    </div>
+    <h2>Q&amp;A</h2>
+    <p class="section-lead">點擊每個問題展開詳細說明。</p>
+
+    <details class="qa">
+      <summary class="qa-summary">
+        <span class="qa-q">Q1</span>
+        <span class="qa-text">匯率風險怎麼看？台幣升值不就虧了？</span>
+        <svg class="qa-arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </summary>
+      <div class="qa-body">匯率是雙向的。台幣若貶值，美元資產換回來反而賺。長期複利會稀釋匯率影響；<b>把資產全押台幣，才是集中了匯率風險。</b></div>
+    </details>
+
+    <details class="qa">
+      <summary class="qa-summary">
+        <span class="qa-q">Q2</span>
+        <span class="qa-text">QQQ 科技佔比太高，跌起來不是比 0050 更慘？</span>
+        <svg class="qa-arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </summary>
+      <div class="qa-body">QQQ 波動確實大於 SPYM，但 QQQ 的 <b>100 支科技龍頭橫跨全球</b>，而 0050 近半押在<b>單一家台灣公司</b>，集中程度更高。</div>
+    </details>
+
+    <details class="qa">
+      <summary class="qa-summary">
+        <span class="qa-q">Q3</span>
+        <span class="qa-text">美股會大崩嗎？</span>
+        <svg class="qa-arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </summary>
+      <div class="qa-body">短期波動一定有，但 S&amp;P 500 與那斯達克歷史上每次大跌都有回來。<b>定期定額本來就是用時間平滑風險的策略。</b></div>
+    </details>
+
+    <details class="qa">
+      <summary class="qa-summary">
+        <span class="qa-q">Q4</span>
+        <span class="qa-text">SPYM 是什麼？沒聽過，可靠嗎？</span>
+        <svg class="qa-arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </summary>
+      <div class="qa-body">SPYM 前身是 SPLG，2025/10/31 由 State Street（發行 SPY 的公司）改名，<b>基金結構、持股、策略完全不變</b>，有超過 20 年歷史。唯一不同是內扣費用現在是市場最低。</div>
+    </details>
+
+    <details class="qa">
+      <summary class="qa-summary">
+        <span class="qa-q">Q5</span>
+        <span class="qa-text">還需要繼續持有 0050 嗎？</span>
+        <svg class="qa-arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </summary>
+      <div class="qa-body">不必急著賣。可以把 0050 當<b>「台灣市場部位」</b>繼續留著，新增資金轉入美股 ETF，<b>形成台美兩地配置</b>，整體分散更完整。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============= SECTION 7: 費用說明 ============= -->
+<section>
+  <div class="card">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <span class="section-label">費用說明</span>
+    </div>
+    <h2>玉山證券美股 e 指存<br>手續費整理</h2>
+    <p class="section-lead">資料來源：玉山證券官方 FAQ（Q6）</p>
+
+    <div class="fee-promo">
+      <span>🎁</span>
+      <div><b>優惠期限</b>：即日起至 <b>2026.12.31</b>。完成約定且未中止，即持續享有定期定額優惠費率。</div>
+    </div>
+
+    <div class="fee-section">
+      <span class="fee-label">買進手續費（定期定額優惠）</span>
+      <table class="fee-table">
+        <thead>
+          <tr><th>成交金額區間</th><th>手續費</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>149 USD 以下</td><td class="num">0.2%</td><td>無最低門檻</td></tr>
+          <tr><td>150 – 666 USD</td><td class="num">固定 0.3 USD</td><td>單筆固定</td></tr>
+          <tr><td>667 USD 以上</td><td class="num">0.18%</td><td>無最低門檻</td></tr>
+        </tbody>
+      </table>
+
+      <div class="fee-example">
+        <div class="fee-example-row"><span>USD 100 存入</span><b>0.2 USD</b></div>
+        <div class="fee-example-row"><span>USD 300 存入</span><b>0.3 USD</b></div>
+        <div class="fee-example-row"><span>USD 1,000 存入</span><b>1.8 USD</b></div>
+      </div>
+    </div>
+
+    <div class="fee-section">
+      <span class="fee-label sell">賣出手續費（複委託費率）</span>
+      <table class="fee-table">
+        <thead>
+          <tr><th>方式</th><th>費率</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>電子下單</td><td class="num">0.4%</td><td>無低收門檻</td></tr>
+        </tbody>
+      </table>
+
+      <div class="fee-example">
+        <div class="fee-example-row"><span>USD 500 賣出</span><b>2 USD</b></div>
+        <div class="fee-example-row"><span>USD 2,000 賣出</span><b>8 USD</b></div>
+        <div class="fee-example-row"><span>USD 10,000 賣出</span><b>40 USD</b></div>
+      </div>
+    </div>
+
+    <p style="font-size:12px;color:var(--slate-500);margin:18px 0 0;line-height:1.65">
+      資料來源：玉山證券官方 FAQ Q6。玉山證券保留延長、修改、變更、終止本優惠活動之權利，請以官網公告為準。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="footer-divider"></div>
+  <p><b>投資升級方案</b> · 資料更新至 2026 年 4 月</p>
+  <p style="max-width:560px;margin:12px auto 0">
+    本內容為一般性教育說明，<b>不構成正式投資建議</b>。績效比較均為歷史數據，不代表未來表現。投資人應依自身風險承受度與財務狀況作出判斷。
+  </p>
+</footer>
+
+<button class="to-top" aria-label="回到頂端" id="toTop">
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd"/></svg>
+</button>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.compare-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
+      document.querySelectorAll('.compare-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.compare-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  // Back to top
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 400);
+  }, {passive:true});
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // Chart.js performance chart
+  const ctx = document.getElementById('perfChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
+        datasets: [
+          {
+            label: '0050 台股大盤',
+            data: [94,111,133,124,162,216,265,205,264,381,363],
+            borderColor: '#F59E0B',
+            backgroundColor: 'rgba(245,158,11,.08)',
+            borderWidth: 2.5,
+            tension: .3,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#F59E0B',
+          },
+          {
+            label: 'SPYM（S&P 500）',
+            data: [101,113,138,132,173,205,264,216,273,341,401],
+            borderColor: '#0F766E',
+            backgroundColor: 'rgba(15,118,110,.08)',
+            borderWidth: 2.5,
+            tension: .3,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#0F766E',
+          },
+          {
+            label: 'QQQ（那斯達克）',
+            data: [109,117,155,155,215,320,408,275,426,535,646],
+            borderColor: '#0891B2',
+            backgroundColor: 'rgba(8,145,178,.10)',
+            borderWidth: 3,
+            tension: .3,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#0891B2',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {mode: 'index', intersect: false},
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              font: {family: '"Noto Sans TC", sans-serif', size: 12},
+              padding: 14,
+              boxWidth: 14,
+              boxHeight: 3,
+              usePointStyle: false,
+              color: '#475569'
+            }
+          },
+          tooltip: {
+            backgroundColor: '#0F172A',
+            titleFont: {family: '"Inter", sans-serif', weight: '700'},
+            bodyFont: {family: '"Noto Sans TC", sans-serif'},
+            padding: 10,
+            cornerRadius: 8,
+            callbacks: {
+              label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y}`
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: {display: false, drawBorder: false},
+            ticks: {color: '#94A3B8', font: {family: '"Inter", sans-serif', size: 11}}
+          },
+          y: {
+            grid: {color: '#F1F5F9', drawBorder: false},
+            border: {display: false},
+            ticks: {
+              color: '#94A3B8',
+              font: {family: '"Inter", sans-serif', size: 11},
+              callback: v => v
+            }
+          }
+        }
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
