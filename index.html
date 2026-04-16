@@ -283,7 +283,7 @@
   }
   .donut{
     flex-shrink:0;
-    width:130px;height:130px;
+    width:110px;height:110px;
     border-radius:50%;
     background:conic-gradient(
       var(--teal-600) 0deg,
@@ -299,7 +299,7 @@
   .donut::before{
     content:"";
     position:absolute;
-    width:86px;height:86px;
+    width:72px;height:72px;
     background:var(--white);
     border-radius:50%;
   }
@@ -310,7 +310,7 @@
   }
   .donut-center-value{
     font-family:"Inter",sans-serif;
-    font-size:26px;
+    font-size:22px;
     font-weight:800;
     color:var(--teal-700);
     line-height:1;
@@ -334,7 +334,7 @@
   .legend-dot{
     width:10px;height:10px;border-radius:3px;flex-shrink:0;
   }
-  .legend-label{flex:1}
+  .legend-label{flex:1;white-space:nowrap}
   .legend-value{
     font-family:"Inter",sans-serif;
     font-weight:700;
@@ -358,17 +358,6 @@
   .perf-card.best{
     background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%);
     border-color:#67E8F9;
-    position:relative;
-  }
-  .perf-card.best::before{
-    content:"最佳";
-    position:absolute;
-    top:-8px;left:50%;transform:translateX(-50%);
-    background:var(--cyan-600);
-    color:var(--white);
-    font-size:10px;font-weight:700;
-    padding:2px 8px;border-radius:6px;
-    letter-spacing:.05em;
   }
   .perf-ticker{
     font-family:"Inter",sans-serif;
@@ -497,13 +486,13 @@
   .rec{
     margin-top:22px;
     padding:16px 18px;
-    background:linear-gradient(135deg,#0F766E 0%,#0D9488 100%);
+    background:linear-gradient(135deg,#134E4A 0%,#115E59 100%);
     color:var(--white);
     border-radius:12px;
     font-size:14px;
     line-height:1.7;
   }
-  .rec b{color:#5EEAD4}
+  .rec b{color:#FCD34D}
 
   /* ------------ STEPS (Slide 6) ------------ */
   .steps{display:flex;flex-direction:column;gap:16px}
@@ -814,7 +803,7 @@
         </div>
         <div class="legend-item">
           <span class="legend-dot" style="background:var(--cyan-500)"></span>
-          <span class="legend-label">金融 / 地產等</span>
+          <span class="legend-label">金融地產等</span>
           <span class="legend-value">15.0%</span>
         </div>
         <div class="legend-item">
