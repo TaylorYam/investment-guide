@@ -735,8 +735,6 @@
     </p>
     <div class="hero-meta">
       <span>資料更新至 2026 年 4 月</span>
-      <span class="hero-meta-divider"></span>
-      <span>共 8 章節 · 慢慢看</span>
     </div>
   </div>
 </header>
@@ -833,24 +831,24 @@
       <span class="section-num">03</span>
       <span class="section-label">績效比較</span>
     </div>
-    <h2>11 年績效比較<br>2015 → 2025</h2>
-    <p class="section-lead">各投入 100 元，含息再投入至 2025 年底（Yahoo Finance 數據）</p>
+    <h2>11 年股價變化<br>2015 → 2026/04</h2>
+    <p class="section-lead">2015 年初股價基準 = 100，至 2026/04/15 的單純股價變化（Yahoo Finance）</p>
 
     <div class="perf-stats">
       <div class="perf-card">
         <div class="perf-ticker">0050</div>
-        <div class="perf-return">+220%</div>
-        <div class="perf-yoy">年化 ~11.3%</div>
+        <div class="perf-return">+406%</div>
+        <div class="perf-yoy">年化 ~15.5%</div>
       </div>
       <div class="perf-card">
         <div class="perf-ticker">SPYM</div>
-        <div class="perf-return">+283%</div>
-        <div class="perf-yoy">年化 ~13.8%</div>
+        <div class="perf-return">+241%</div>
+        <div class="perf-yoy">年化 ~11.5%</div>
       </div>
       <div class="perf-card best">
         <div class="perf-ticker">QQQ</div>
-        <div class="perf-return">+610%</div>
-        <div class="perf-yoy">年化 ~20.2%</div>
+        <div class="perf-return">+519%</div>
+        <div class="perf-yoy">年化 ~17.5%</div>
       </div>
     </div>
 
@@ -859,7 +857,7 @@
         <canvas id="perfChart"></canvas>
       </div>
     </div>
-    <p class="chart-note">數據來源：Yahoo Finance（SPY / QQQ 含息總報酬）；0050 以台股加權報酬指數近似推算。<b>過去績效不代表未來表現。</b></p>
+    <p class="chart-note">數據來源：Yahoo Finance 收盤價（不含股息再投入）。<b>過去績效不代表未來表現。</b></p>
   </div>
 </section>
 
@@ -1159,11 +1157,11 @@
     new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
+        labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026/04'],
         datasets: [
           {
             label: '0050 台股大盤',
-            data: [94,111,133,124,162,216,265,205,264,381,363],
+            data: [91,108,123,113,146,184,219,166,204,294,394,506],
             borderColor: '#F59E0B',
             backgroundColor: 'rgba(245,158,11,.08)',
             borderWidth: 2.5,
@@ -1174,7 +1172,7 @@
           },
           {
             label: 'SPYM（S&P 500）',
-            data: [101,113,138,132,173,205,264,216,273,341,401],
+            data: [99,109,130,121,157,182,231,186,231,285,332,341],
             borderColor: '#0F766E',
             backgroundColor: 'rgba(15,118,110,.08)',
             borderWidth: 2.5,
@@ -1185,7 +1183,7 @@
           },
           {
             label: 'QQQ（那斯達克）',
-            data: [109,117,155,155,215,320,408,275,426,535,646],
+            data: [109,115,151,150,207,305,387,259,398,497,597,619],
             borderColor: '#0891B2',
             backgroundColor: 'rgba(8,145,178,.10)',
             borderWidth: 3,
